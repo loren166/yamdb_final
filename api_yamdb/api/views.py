@@ -8,10 +8,10 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.viewsets import GenericViewSet
 from reviews.models import Category, Genre, Review, Title
 from users.permissions import IsAdminOrReadOnlyPermission, IsValidOrReadonly
-from api.filters import FilterTitle
 from api.serializers import (CategorySerializer, CommentSerializer,
                              GenreSerializer, ReviewSerializer,
                              TitleReadSerializer, TitleWriteSerializer)
+from api.filters import FilterTitle
 
 
 class ReviewViewSet(viewsets.ModelViewSet):
