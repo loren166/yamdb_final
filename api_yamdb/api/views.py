@@ -1,3 +1,7 @@
+from api.filters import FilterTitle
+from api.serializers import (CategorySerializer, CommentSerializer,
+                             GenreSerializer, ReviewSerializer,
+                             TitleReadSerializer, TitleWriteSerializer)
 from django.db.models import Avg
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
@@ -8,10 +12,6 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.viewsets import GenericViewSet
 from reviews.models import Category, Genre, Review, Title
 from users.permissions import IsAdminOrReadOnlyPermission, IsValidOrReadonly
-from api.serializers import (CategorySerializer, CommentSerializer,
-                             GenreSerializer, ReviewSerializer,
-                             TitleReadSerializer, TitleWriteSerializer)
-from api.filters import FilterTitle
 
 
 class ReviewViewSet(viewsets.ModelViewSet):
