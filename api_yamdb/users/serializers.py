@@ -4,7 +4,7 @@ from rest_framework import serializers
 from users.models import User
 
 
-def MeValidator(value):
+def mevalidator(value):
     if value.lower() == 'me':
         raise serializers.ValidationError(
             "Использовать имя 'me' в качестве `username` запрещено."
@@ -18,7 +18,7 @@ class SignupSerializer(serializers.Serializer):
         max_length=150,
         required=True,
         allow_blank=False,
-        validators=[MeValidator, ASCIIUsernameValidator()],
+        validators=[mevalidator, ASCIIUsernameValidator()],
     )
     email = serializers.EmailField(
         min_length=5,
@@ -51,7 +51,7 @@ class AdminUserSerializer(serializers.ModelSerializer):
         )
 
     def validate_username(self, value):
-        return MeValidator(value)
+        return mevalidator(value)
 
 
 class UserSerializer(AdminUserSerializer):

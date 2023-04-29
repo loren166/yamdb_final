@@ -11,12 +11,8 @@ from rest_framework_simplejwt.tokens import AccessToken, RefreshToken
 
 from users.models import User
 from users.permissions import IsAdminPermission
-from users.serializers import (
-    AdminUserSerializer,
-    SignupSerializer,
-    TokenSerializer,
-    UserSerializer,
-)
+from users.serializers import (AdminUserSerializer, SignupSerializer,
+                               TokenSerializer, UserSerializer)
 
 
 class SignupView(APIView):
