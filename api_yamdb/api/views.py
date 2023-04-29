@@ -7,11 +7,11 @@ from rest_framework.mixins import (CreateModelMixin, DestroyModelMixin,
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.viewsets import GenericViewSet
 from reviews.models import Category, Genre, Review, Title
+from users.permissions import IsAdminOrReadOnlyPermission, IsValidOrReadonly
 from api.filters import FilterTitle
 from api.serializers import (CategorySerializer, CommentSerializer,
                              GenreSerializer, ReviewSerializer,
                              TitleReadSerializer, TitleWriteSerializer)
-from users.permissions import IsAdminOrReadOnlyPermission, IsValidOrReadonly
 
 
 class ReviewViewSet(viewsets.ModelViewSet):
