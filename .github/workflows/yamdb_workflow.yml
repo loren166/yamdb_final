@@ -69,6 +69,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE_SERVER }}
         script: |
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/yamdb:latest
+          cd home/loren166
           sudo docker-compose stop
           sudo docker-compose rm web
           touch .env
