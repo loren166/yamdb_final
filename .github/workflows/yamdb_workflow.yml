@@ -82,6 +82,10 @@ jobs:
           echo EMAIL=${{ secrets.EMAIL }} >> .env
           echo PASSWORD=${{ secrets.PASSWORD }} >> .env
           sudo docker-compose up -d 
+          sudo docker-compose exec -T web python manage.py makemigrations users
+          sudo docker-compose exec -T web python manage.py migrate users
+          sudo docker-compose exec -T web python manage.py makemigrations reviews
+          sudo docker-compose exec -T web python manage.py migrate reviews
           sudo docker-compose exec -T web python manage.py migrate
           sudo docker-compose exec -T web python manage.py collectstatic --no-input
 
