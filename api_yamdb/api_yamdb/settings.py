@@ -4,7 +4,7 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'SECRET'
+SECRET_KEY = 'SECRET' #Это уже переменная по которой я получаю значение из .env
 
 DEBUG = False
 
