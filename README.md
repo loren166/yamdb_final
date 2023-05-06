@@ -51,3 +51,4 @@ docker-compose exec web python manage.py dumpdata > dump.json
 
 ## Документация
 Документация будет доступна по эндпоинту /redoc/.
+http://51.250.91.186/redoc/
